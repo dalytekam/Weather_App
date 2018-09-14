@@ -1,0 +1,14 @@
+{
+  "name": "meteo-app",
+  "version": "1.0.0",
+  "description": "Meteo Web App",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o src/css/ --recursive"
+  },
+  "keywords": [
+    "Meteo"
+  ],
+  "author": "Daly tekam",
+  "license": "MIT"
+}

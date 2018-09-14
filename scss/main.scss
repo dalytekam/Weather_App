@@ -1,0 +1,165 @@
+main,
+header,
+
+div {
+    border: 1px solid black;
+
+}
+
+section {
+    background-color: chocolate;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95%;
+    max-width: 800px;
+    grid-template-rows: 1fr 1.5fr 3fr 3fr 1fr;
+    margin: 1rem auto;
+    height: 100%;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+}
+
+
+header {
+    display: grid;
+    background-color: #000;
+    text-align: center;
+    color: white;
+}
+
+.top,
+.five-days,
+.update-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    // padding: 0.5rem;
+    grid-gap: 0.5rem;
+}
+
+.current {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // padding: 0.5rem;
+    grid-gap: 0.5rem;
+}
+
+//width of elements in differents sections
+.top .city {
+    grid-column: span 4;
+    grid-gap: 0.5rem;
+
+    .city-details {
+        display: grid;
+        grid-template-columns: 9fr 1fr;
+        // padding: 0.5rem;
+        grid-gap: 0.5rem;
+
+        .city-name-search {
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+            .city-name {
+                grid-column: 1/-1;
+            }
+
+        }
+    }
+}
+
+
+
+@for $i from 1 through 5 {
+    .day-#{$i} {
+        display: grid;
+        grid-row-gap: 0.5rem;
+    }
+}
+
+.city-search {
+    display: none;
+
+    grid-column: 1/-1;
+
+    a {
+        display: inline-block;
+        border: 1px solid red;
+        margin-left: 0.5rem;
+        width: 30%;
+    }
+
+
+}
+
+
+
+.setting {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    transform: translate(0, -140px);
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.2rem;
+    transition: all 500ms ease-in;
+    color: white;
+
+    .language,
+    .unit {
+        text-align: center;
+    }
+
+    .btn {
+        display: grid;
+        grid-gap: 0.3rem;
+
+        button {
+            display: block;
+            cursor: pointer;
+        }
+    }
+}
+
+input[type="text"] {
+    width: 60%;
+
+}
+
+.show {
+    display: block;
+}
+
+.parameter,
+.arrow {
+    text-align: center;
+}
+
+.arrow-down,
+.param,
+.arrow-up {
+    cursor: pointer;
+}
+
+
+.displaySettings {
+    display: grid;
+    transform: translate(0, 10px);
+    transition: all 500ms ease-in;
+    z-index: 3;
+
+
+}
+
+select {
+    cursor: pointer;
+}

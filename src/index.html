@@ -8,6 +8,7 @@
     <title>Meteo App</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-icons.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -17,16 +18,16 @@
         <div class="setting">
             <div class="language">
                 <h4>Language</h4>
-                <select>
-                    <option value="volvo">English</option>
-                    <option value="audi">Spanish</option>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
                 </select>
             </div>
             <div class="unit">
                 <h4>Unit</h4>
-                <select>
-                    <option value="saab">Fahrenheit</option>
-                    <option value="volvo">Celcius</option>
+                <select id="unit">
+                    <option value="imperial">Fahrenheit</option>
+                    <option value="metric">Celcius</option>
 
                 </select>
             </div>
@@ -43,8 +44,15 @@
             <div class="city">
                 <div class="city-details">
                     <div class="city-name-search">
-                        <div class=city-name>a</div>
-                        <div class="city-search"><input type="text" placeholder="search a city"><button>Search</button></div>
+                        <div class="city-name">
+                            <h3>Bafoussam</h3>
+                        </div>
+                        <div class="city-search">
+                            <form>
+                                <input type="text" id="inputSearch" placeholder="Ex:london,uk">
+                                <input type="submit" value="search" id="searchBtn">
+                            </form>
+                        </div>
                     </div>
                     <div class="arrow">
                         <h4><i class="fas fa-angle-down arrow-down"></i></h4>
@@ -57,52 +65,142 @@
 
         </section>
         <section class="current">
-            <div class="icon">image</div>
-            <div class="temperature">84 F</div>
+            <div class="icon">
+                <h1><i class="wi wi-day-sunny"></i></h1>
+                <h4>Legere pluie pluie de l eau et beaucoup </h4>
+            </div>
+            <div class="temperature">
+                <h1>87&deg;</h1>
+                <h1>C</h1>
+                <h3>12 jan 2018</h3>
+            </div>
             <div class="description">
                 <div class="description-title">
-                    <h4>broken clouds</h4>
+                    <div class="sunRise">
+                        <i class="wi wi-horizon-alt"></i>
+                        <h6>14:53 </h6>
+                    </div>
+                    <div class="sunSet">
+                        <i class="wi wi-horizon"></i>
+                        <h6>23:02</h6>
+                    </div>
                 </div>
-                <div class="rainRate">
-                    <h4><i class="fas fa-tint"></i> 6%</h4>
+                <div class="wind">
+                    <div class="windSymbol">
+                        <h3><i class="wi wi-strong-wind"></i></h3>
+                    </div>
+                    <div class="windValue">
+                        <h5>53 <span>MPH</span></h5>
+                    </div>
+                </div>
+                <div class="minmaxtemp">
+                    <div class="thermometer">
+                        <h5><i class="wi wi-thermometer"></i></h5>
+                    </div>
+                    <div class="tempvalues">
+                        <div class="max">
+                            <h3>90&deg;</h3>
+                        </div>
+                        <div class="min">
+                            <h3>65&deg;</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="humidity">
+                    <div class="humiditySymbol">
+                        <h4><i class="fas fa-tint"></i></h4>
+                    </div>
+                    <div class="humidityValue">
+                        <h4>47%</h4>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="five-days">
             <div class="day-1">
-                <div>z</div>
-                <div>z</div>
-                <div>z</div>
-                <div>z</div>
+                <div>
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div>
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div>
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div>
+                    <h4>68&deg;</h4>
+                    <h4>45&deg;</h4>
+                </div>
             </div>
             <div class="day-2">
-                <div>f</div>
-                <div>f</div>
-                <div>f</div>
-                <div>f</div>
+                <div>
+                    <h4>LUN</h4>
+                    <h5>FEV 19</h5>
+                </div>
+                <div>
+                    <h5><i class="wi wi-night-fog"></i></h5>
+                </div>
+                <div>
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div>
+                    <h4>73&deg;</h4>
+                    <h4>40&deg;</h4>
+                </div>
             </div>
             <div class="day-3">
-                <div>fgh</div>
-                <div>fgh</div>
-                <div>fgh</div>
-                <div>fgh</div>
+                <div>
+                    <h4>LUN</h4>
+                    <h5>FEV 20</h5>
+                </div>
+                <div>
+                    <h5><i class="wi wi-day-sunny-overcast"></i></h5>
+                </div>
+                <div>
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div>
+                    <h4>53&deg;</h4>
+                    <h4>20&deg;</h4>
+                </div>
             </div>
             <div class="day-4">
-                <div>frggf</div>
-                <div>frggf</div>
-                <div>frggf</div>
-                <div>frggf</div>
+                <div>
+                    <h4>LUN</h4>
+                    <h5>FEV 21</h5>
+                </div>
+                <div>
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div>
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div>
+                    <h4>53&deg;</h4>
+                    <h4>40&deg;</h4>
+                </div>
             </div>
             <div class="day-5">
-                <div>wcsd</div>
-                <div>wcsd</div>
-                <div>wcsd</div>
-                <div>wcsd</div>
+                <div>
+                    <h4>LUN</h4>
+                    <h5>FEV 22</h5>
+                </div>
+                <div>
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div>
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div>
+                    <h4>53&deg;</h4>
+                    <h4>35&deg;</h4>
+                </div>
             </div>
         </section>
-        <section class="update-info">
-            rfjsdkhdsnkj
-        </section>
+        <footer class="update-info">
+            <p>copyright&COPY; 2018</p>
+        </footer>
     </main>
     <script src="js/main.js"></script>
 </body>

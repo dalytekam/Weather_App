@@ -1,17 +1,9 @@
-main,
-header,
-div {
-  border: 1px solid black; }
-
-section {
-  background-color: chocolate; }
-
 main {
   display: grid;
   grid-template-columns: 1fr;
   width: 95%;
   max-width: 800px;
-  grid-template-rows: 1fr 1.5fr 3fr 3fr 1fr;
+  grid-template-rows: 1fr 1.2fr 3fr 3fr 1fr;
   margin: 1rem auto;
   height: 100%;
   grid-gap: 0.5rem;
@@ -25,16 +17,38 @@ header {
   color: white; }
 
 .top,
-.five-days,
-.update-info {
+.five-days {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.5rem; }
 
+footer {
+  display: grid;
+  background-color: #000;
+  color: #fff;
+  align-items: end; }
+  footer p {
+    margin: 0 auto;
+    padding: 0.5rem; }
+
 .current {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.5rem; }
+  grid-gap: 0.5rem;
+  border-bottom: 1px solid black;
+  border-width: 60%;
+  border-top: 1px solid black;
+  border-width: 60%;
+  padding-top: 0.5rem; }
+  .current .description {
+    display: grid;
+    align-content: center; }
+
+.icon,
+.temperature,
+.description {
+  text-align: center;
+  align-items: center; }
 
 .top .city {
   grid-column: span 4;
@@ -42,13 +56,17 @@ header {
   .top .city .city-details {
     display: grid;
     grid-template-columns: 9fr 1fr;
-    grid-gap: 0.5rem; }
+    grid-gap: 0.5rem;
+    transition: all 2000ms ease-in; }
     .top .city .city-details .city-name-search {
       display: grid;
       grid-gap: 0.5rem;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
       .top .city .city-details .city-name-search .city-name {
-        grid-column: 1/-1; }
+        grid-column: 1/-1;
+        text-align: center; }
+        .top .city .city-details .city-name-search .city-name h3 {
+          text-transform: uppercase; }
 
 .day-1 {
   display: grid;
@@ -73,11 +91,13 @@ header {
 .city-search {
   display: none;
   grid-column: 1/-1; }
-  .city-search a {
+  .city-search #searchBtn {
     display: inline-block;
     border: 1px solid red;
     margin-left: 0.5rem;
-    width: 30%; }
+    width: 25%;
+    padding: 0.5rem;
+    cursor: pointer; }
 
 .setting {
   box-sizing: border-box;
@@ -106,7 +126,8 @@ header {
       cursor: pointer; }
 
 input[type="text"] {
-  width: 60%; }
+  width: 60%;
+  padding: 0.5rem; }
 
 .show {
   display: block; }
@@ -122,9 +143,196 @@ input[type="text"] {
 
 .displaySettings {
   display: grid;
-  transform: translate(0, 10px);
+  transform: translate(0, 50px);
   transition: all 500ms ease-in;
   z-index: 3; }
 
 select {
   cursor: pointer; }
+
+.temperature {
+  display: grid;
+  align-items: center; }
+  .temperature h1 {
+    margin: 0;
+    font-size: 4rem; }
+
+.icon {
+  display: grid;
+  align-items: center; }
+  .icon i {
+    font-size: 5rem; }
+  .icon h1 {
+    margin: 0; }
+  .icon h4 {
+    align-self: end; }
+
+.description-title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  .description-title h6 {
+    margin: 0; }
+
+.wind {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  .wind h5 {
+    margin: 0; }
+  .wind .windValue {
+    display: grid;
+    align-content: center; }
+
+.minmaxtemp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+  .minmaxtemp .thermometer {
+    display: grid;
+    align-content: center; }
+    .minmaxtemp .thermometer h5 {
+      margin: 0; }
+    .minmaxtemp .thermometer i {
+      font-size: 2.3rem; }
+
+.tempvalues {
+  display: grid; }
+  .tempvalues h3 {
+    margin: 0.3rem; }
+
+.humidity {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
+.day-1 {
+  background-color: rgba(51, 51, 51, 0.2); }
+  .day-1 div {
+    display: grid;
+    text-align: center; }
+    .day-1 div:nth-child(1) {
+      align-content: center; }
+    .day-1 div:nth-child(2) {
+      align-content: center; }
+    .day-1 div:nth-child(3) {
+      align-items: start; }
+      .day-1 div:nth-child(3) h6 {
+        margin: 0;
+        padding: 0.09rem; }
+    .day-1 div:nth-child(4) {
+      align-items: center; }
+      .day-1 div:nth-child(4) h4 {
+        margin: 0;
+        font-size: 1.4rem; }
+    .day-1 div h4,
+    .day-1 div h5 {
+      margin: 0;
+      padding: 0; }
+      .day-1 div h4 i,
+      .day-1 div h5 i {
+        font-size: 2rem; }
+
+.day-2 {
+  background-color: rgba(51, 51, 51, 0.2); }
+  .day-2 div {
+    display: grid;
+    text-align: center; }
+    .day-2 div:nth-child(1) {
+      align-content: center; }
+    .day-2 div:nth-child(2) {
+      align-content: center; }
+    .day-2 div:nth-child(3) {
+      align-items: start; }
+      .day-2 div:nth-child(3) h6 {
+        margin: 0;
+        padding: 0.09rem; }
+    .day-2 div:nth-child(4) {
+      align-items: center; }
+      .day-2 div:nth-child(4) h4 {
+        margin: 0;
+        font-size: 1.4rem; }
+    .day-2 div h4,
+    .day-2 div h5 {
+      margin: 0;
+      padding: 0; }
+      .day-2 div h4 i,
+      .day-2 div h5 i {
+        font-size: 2rem; }
+
+.day-3 {
+  background-color: rgba(51, 51, 51, 0.2); }
+  .day-3 div {
+    display: grid;
+    text-align: center; }
+    .day-3 div:nth-child(1) {
+      align-content: center; }
+    .day-3 div:nth-child(2) {
+      align-content: center; }
+    .day-3 div:nth-child(3) {
+      align-items: start; }
+      .day-3 div:nth-child(3) h6 {
+        margin: 0;
+        padding: 0.09rem; }
+    .day-3 div:nth-child(4) {
+      align-items: center; }
+      .day-3 div:nth-child(4) h4 {
+        margin: 0;
+        font-size: 1.4rem; }
+    .day-3 div h4,
+    .day-3 div h5 {
+      margin: 0;
+      padding: 0; }
+      .day-3 div h4 i,
+      .day-3 div h5 i {
+        font-size: 2rem; }
+
+.day-4 {
+  background-color: rgba(51, 51, 51, 0.2); }
+  .day-4 div {
+    display: grid;
+    text-align: center; }
+    .day-4 div:nth-child(1) {
+      align-content: center; }
+    .day-4 div:nth-child(2) {
+      align-content: center; }
+    .day-4 div:nth-child(3) {
+      align-items: start; }
+      .day-4 div:nth-child(3) h6 {
+        margin: 0;
+        padding: 0.09rem; }
+    .day-4 div:nth-child(4) {
+      align-items: center; }
+      .day-4 div:nth-child(4) h4 {
+        margin: 0;
+        font-size: 1.4rem; }
+    .day-4 div h4,
+    .day-4 div h5 {
+      margin: 0;
+      padding: 0; }
+      .day-4 div h4 i,
+      .day-4 div h5 i {
+        font-size: 2rem; }
+
+.day-5 {
+  background-color: rgba(51, 51, 51, 0.2); }
+  .day-5 div {
+    display: grid;
+    text-align: center; }
+    .day-5 div:nth-child(1) {
+      align-content: center; }
+    .day-5 div:nth-child(2) {
+      align-content: center; }
+    .day-5 div:nth-child(3) {
+      align-items: start; }
+      .day-5 div:nth-child(3) h6 {
+        margin: 0;
+        padding: 0.09rem; }
+    .day-5 div:nth-child(4) {
+      align-items: center; }
+      .day-5 div:nth-child(4) h4 {
+        margin: 0;
+        font-size: 1.4rem; }
+    .day-5 div h4,
+    .day-5 div h5 {
+      margin: 0;
+      padding: 0; }
+      .day-5 div h4 i,
+      .day-5 div h5 i {
+        font-size: 2rem; }

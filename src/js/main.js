@@ -29,7 +29,20 @@ const cityAndCountry = document.querySelector("#cityNameAndCountryName");
 //Arrays of week days
 const weekDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 //Arrays of months
-const months = ["jan", "fev", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const months = [
+  "jan",
+  "fev",
+  "mar",
+  "apr",
+  "may",
+  "jun",
+  "jul",
+  "aug",
+  "sep",
+  "oct",
+  "nov",
+  "dec"
+];
 
 //Set a configuration Object
 let configuration = {
@@ -38,9 +51,12 @@ let configuration = {
 };
 // Define an array to store the configuration in local storage
 let parameters = [];
-parameters.push(configuration);
+
 // initial configuration setting in local storage
-localStorage.setItem('config', JSON.stringify(parameters));
+if (localStorage.getItem("config") == null) {
+  parameters.push(configuration);
+  localStorage.setItem("config", JSON.stringify(parameters));
+}
 
 // animate the sync icon
 // spin.addEventListener("click", animateSync);
@@ -62,15 +78,11 @@ function toggleSearchBar(e) {
   }
 }
 
-
 param.addEventListener("click", openSettings);
-
 
 function openSettings() {
   setting.classList.add("displaySettings");
 }
-
-
 
 btn[1].addEventListener("click", closeSettings);
 btn[0].addEventListener("click", saveSettings);
@@ -78,19 +90,16 @@ btn[0].addEventListener("click", closeSettings);
 
 function closeSettings() {
   setting.classList.remove("displaySettings");
-
 }
 
 function saveSettings() {
-
   // Get the configuration from local storage
-  parameters = JSON.parse(localStorage.getItem('config'));
+  parameters = JSON.parse(localStorage.getItem("config"));
   // Change the language and the unit of temperature according to the user choice
   parameters[0].lan = lang.value;
   parameters[0].temp = unit.value;
   //Save the new values in the local storage
-  localStorage.setItem('config', JSON.stringify(parameters));
-
+  localStorage.setItem("config", JSON.stringify(parameters));
 }
 
 //Call the API
@@ -98,18 +107,16 @@ function callTheApi(e) {
   let displayTempUnit;
   let displaySpeedUnit;
 
-  let unit = JSON.parse(localStorage.getItem('config'))[0].temp;
-  let lan = JSON.parse(localStorage.getItem('config'))[0].lan;
+  let unit = JSON.parse(localStorage.getItem("config"))[0].temp;
+  let lan = JSON.parse(localStorage.getItem("config"))[0].lan;
   let key = "6f82f2d2ceb2aa8ec59653c8cd278915";
   let nameOfCity = inputSearch.value.trim();
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
-
 
   // check the unit to display the good letter("F" or "C")
   if (unit == "imperial") {
     displayTempUnit = "F";
     displaySpeedUnit = "mph";
-
   }
   if (unit == "metric") {
     displayTempUnit = "C";
@@ -140,21 +147,26 @@ function callTheApi(e) {
       let m = months[date.getMonth()];
       let y = date.getFullYear();
       let dateOnScreen = date.toLocaleDateString();
-      let sunRise = new Date(data.sys.sunrise * 1000).toLocaleTimeString(navigator.language, {
-        hour: '2-digit',
-        minute: '2-digit'
-      });
-      let sunSet = new Date(data.sys.sunset * 1000).toLocaleTimeString(navigator.language, {
-        hour: '2-digit',
-        minute: '2-digit'
-      });
+      let sunRise = new Date(data.sys.sunrise * 1000).toLocaleTimeString(
+        navigator.language,
+        {
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
+      let sunSet = new Date(data.sys.sunset * 1000).toLocaleTimeString(
+        navigator.language,
+        {
+          hour: "2-digit",
+          minute: "2-digit"
+        }
+      );
 
       // Generate the city name and country content
       fetch("js/countriesCode.json")
         .then(res => res.json())
         .then(data => {
           data.forEach(country => {
-
             if (countryName == country.code) {
               countryName = country.name.toUpperCase();
             }
@@ -231,30 +243,25 @@ function callTheApi(e) {
 searchForm.addEventListener("submit", callTheApi);
 searchForm.addEventListener("submit", displayTheForeccast);
 
-
 function displayTheForeccast() {
-
-  let unit = JSON.parse(localStorage.getItem('config'))[0].temp;
-  let lan = JSON.parse(localStorage.getItem('config'))[0].lan;
+  let unit = JSON.parse(localStorage.getItem("config"))[0].temp;
+  let lan = JSON.parse(localStorage.getItem("config"))[0].lan;
   let key = "6f82f2d2ceb2aa8ec59653c8cd278915";
   let nameOfCity = inputSearch.value.trim();
   let url = `http://api.openweathermap.org/data/2.5/forecast?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
   fetch(url)
     .then(res => res.json())
     .then(data => {
-
-
       for (let i = 0; i < 5; i++) {
-        const day = document.querySelector(`.day-${i+1}`);
-        // Get the data for regular interval 
-        let date = new Date((data.list[i * 8 + 2]).dt * 1000);
+        const day = document.querySelector(`.day-${i + 1}`);
+        // Get the data for regular interval
+        let date = new Date(data.list[i * 8 + 2].dt * 1000);
         let dateOfMonth = date.getDate();
         let month = months[date.getMonth()];
         let dayOfWeek = weekDays[date.getDay()].toLocaleUpperCase();
         let groupId = data.list[i * 8 + 2].weather[0].id;
         let description = data.list[i * 8 + 2].weather[0].description;
         let temp = data.list[i * 8 + 2].main.temp.toFixed();
-
 
         day.innerHTML = `
         
@@ -272,10 +279,9 @@ function displayTheForeccast() {
                     <h4>${temp}&deg;</h4>
                     
                 </div>
-        `
+        `;
       }
     });
-
 }
 
 // function animateSync() {

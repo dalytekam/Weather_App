@@ -1,3 +1,8 @@
+main,
+header,
+div {
+  border: 1px solid black; }
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -38,7 +43,6 @@ footer {
   border-bottom: 1px solid black;
   border-width: 60%;
   border-top: 1px solid black;
-  border-width: 60%;
   padding-top: 0.5rem; }
   .current .description {
     display: grid;
@@ -65,7 +69,7 @@ footer {
       .top .city .city-details .city-name-search .city-name {
         grid-column: 1/-1;
         text-align: center; }
-        .top .city .city-details .city-name-search .city-name h3 {
+        .top .city .city-details .city-name-search .city-name h3:first-letter {
           text-transform: uppercase; }
 
 .day-1 {
@@ -93,7 +97,6 @@ footer {
   grid-column: 1/-1; }
   .city-search #searchBtn {
     display: inline-block;
-    border: 1px solid red;
     margin-left: 0.5rem;
     width: 25%;
     padding: 0.5rem;
@@ -181,6 +184,8 @@ select {
   .wind .windValue {
     display: grid;
     align-content: center; }
+    .wind .windValue h5 {
+      font-size: 0.8rem; }
 
 .minmaxtemp {
   display: grid;
@@ -201,6 +206,8 @@ select {
 .humidity {
   display: grid;
   grid-template-columns: repeat(2, 1fr); }
+  .humidity .humiditySymbol i {
+    font-size: 1rem; }
 
 .day-1 {
   background-color: rgba(51, 51, 51, 0.2); }

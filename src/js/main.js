@@ -24,7 +24,7 @@ const currentSection = document.querySelector(".current");
 //Get the city name div content ("h3")
 const cityAndCountry = document.querySelector("#cityNameAndCountryName");
 
-
+// const spin = document.querySelector(".spin");
 
 //Arrays of week days
 const weekDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
@@ -42,7 +42,10 @@ parameters.push(configuration);
 // initial configuration setting in local storage
 localStorage.setItem('config', JSON.stringify(parameters));
 
-
+// animate the sync icon
+// spin.addEventListener("click", animateSync);
+// spin.addEventListener("click", callTheApi);
+// spin.addEventListener("click", displayTheForeccast);
 
 arrow.addEventListener("click", toggleSearchBar);
 
@@ -121,7 +124,7 @@ function callTheApi(e) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      //console.log(data);
 
       let city = data.name;
       let countryName = data.sys.country;
@@ -129,8 +132,8 @@ function callTheApi(e) {
       let description = data.weather[0].description;
       let tempNow = data.main.temp.toFixed();
       let humidity = data.main.humidity.toFixed();
-      let minTemp = data.main.temp_min.toFixed();
-      let maxTemp = data.main.temp_max.toFixed();
+      let minTemp = Math.floor(data.main.temp_min);
+      let maxTemp = Math.ceil(data.main.temp_max);
       let windSpeed = data.wind.speed.toFixed();
       let date = new Date(data.dt * 1000);
       let d = date.getDate();
@@ -226,3 +229,63 @@ function callTheApi(e) {
     });
 }
 searchForm.addEventListener("submit", callTheApi);
+searchForm.addEventListener("submit", displayTheForeccast);
+
+
+function displayTheForeccast() {
+
+  let unit = JSON.parse(localStorage.getItem('config'))[0].temp;
+  let lan = JSON.parse(localStorage.getItem('config'))[0].lan;
+  let key = "6f82f2d2ceb2aa8ec59653c8cd278915";
+  let nameOfCity = inputSearch.value.trim();
+  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+
+
+      for (let i = 0; i < 5; i++) {
+        const day = document.querySelector(`.day-${i+1}`);
+        // Get the data for regular interval 
+        let date = new Date((data.list[i * 8 + 2]).dt * 1000);
+        let dateOfMonth = date.getDate();
+        let month = months[date.getMonth()];
+        let dayOfWeek = weekDays[date.getDay()].toLocaleUpperCase();
+        let groupId = data.list[i * 8 + 2].weather[0].id;
+        let description = data.list[i * 8 + 2].weather[0].description;
+        let temp = data.list[i * 8 + 2].main.temp.toFixed();
+
+
+        day.innerHTML = `
+        
+        <div class="forecast-date">
+                    <h4>${dayOfWeek}</h4>
+                    <h5>${month} ${dateOfMonth}</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-owm-${groupId}"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>${description}</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>${temp}&deg;</h4>
+                    
+                </div>
+        `
+      }
+    });
+
+}
+
+// function animateSync() {
+//   spin.classList.add("fa-spin");
+
+// }
+// let a = document.getElementsByTagName("main");
+// a[0].addEventListener("load", stopSyncAnimation);
+
+// function stopSyncAnimation() {
+//   spin.classList.remove("fa-spin");
+//   console.log("ok");
+// }

@@ -9,337 +9,307 @@ main {
   grid-gap: 0.5rem;
   padding: 0.5rem;
   position: relative; }
-
-header {
-  display: grid;
-  background-color: #000;
-  text-align: center;
-  color: white; }
-
-.top,
-.five-days {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.5rem; }
-
-footer {
-  display: grid;
-  background-color: #000;
-  color: #fff;
-  align-items: end; }
-  footer p {
-    margin: 0 auto;
-    padding: 0.5rem; }
-
-.current {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.5rem;
-  border-bottom: 1px solid black;
-  border-width: 60%;
-  border-top: 1px solid black;
-  padding-top: 0.5rem; }
-  .current .description {
+  main header {
     display: grid;
-    align-content: center; }
-
-.icon,
-.temperature,
-.description {
-  text-align: center;
-  align-items: center; }
-
-.top .city {
-  grid-column: span 4;
-  grid-gap: 0.5rem; }
-  .top .city .city-details {
+    background-color: #000;
+    text-align: center;
+    color: white; }
+  main .top,
+  main .five-days {
     display: grid;
-    grid-template-columns: 9fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem; }
+  main footer {
+    display: grid;
+    background-color: #000;
+    color: #fff;
+    align-items: end; }
+    main footer p {
+      margin: 0 auto;
+      padding: 0.5rem; }
+  main .current {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5rem;
-    transition: all 2000ms ease-in; }
-    .top .city .city-details .city-name-search {
+    border-bottom: 1px solid black;
+    border-width: 60%;
+    border-top: 1px solid black;
+    padding-top: 0.5rem;
+    background-color: #00ddee; }
+    main .current .description {
       display: grid;
+      align-content: center; }
+  main .icon,
+  main .temperature,
+  main .description {
+    text-align: center;
+    align-items: center; }
+  main .top .city {
+    grid-column: span 4;
+    grid-gap: 0.5rem; }
+    main .top .city .city-details {
+      display: grid;
+      grid-template-columns: 9fr 1fr;
       grid-gap: 0.5rem;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
-      .top .city .city-details .city-name-search .city-name {
-        grid-column: 1/-1;
-        text-align: center; }
-        .top .city .city-details .city-name-search .city-name h3:first-letter {
-          text-transform: uppercase; }
-
-.day-1 {
-  display: grid;
-  grid-row-gap: 0.5rem;
-  grid-template-rows: repeat(4, 1fr); }
-
-.day-2 {
-  display: grid;
-  grid-row-gap: 0.5rem;
-  grid-template-rows: repeat(4, 1fr); }
-
-.day-3 {
-  display: grid;
-  grid-row-gap: 0.5rem;
-  grid-template-rows: repeat(4, 1fr); }
-
-.day-4 {
-  display: grid;
-  grid-row-gap: 0.5rem;
-  grid-template-rows: repeat(4, 1fr); }
-
-.day-5 {
-  display: grid;
-  grid-row-gap: 0.5rem;
-  grid-template-rows: repeat(4, 1fr); }
-
-.city-search {
-  display: none;
-  grid-column: 1/-1; }
-  .city-search #searchBtn {
-    display: inline-block;
-    margin-left: 0.5rem;
-    width: 25%;
-    padding: 0.5rem;
-    cursor: pointer; }
-
-.setting {
-  box-sizing: border-box;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0.5rem;
-  width: calc(100% - 1rem);
-  transform: translate(0, -140px);
-  background-color: #000;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.2rem;
-  transition: all 500ms ease-in;
-  color: white; }
-  .setting .language,
-  .setting .unit {
-    text-align: center; }
-  .setting .btn {
+      transition: all 2000ms ease-in; }
+      main .top .city .city-details .city-name-search {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
+        main .top .city .city-details .city-name-search .city-name {
+          grid-column: 1/-1;
+          text-align: center; }
+          main .top .city .city-details .city-name-search .city-name h3:first-letter {
+            text-transform: uppercase; }
+  main .day-1 {
     display: grid;
-    grid-gap: 0.3rem; }
-    .setting .btn button {
-      display: block;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-2 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-3 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-4 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-5 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .city-search {
+    display: none;
+    grid-column: 1/-1; }
+    main .city-search #searchBtn {
+      display: inline-block;
+      margin-left: 0.5rem;
+      width: 25%;
+      padding: 0.5rem;
       cursor: pointer; }
-
-input[type="text"] {
-  width: 60%;
-  padding: 0.5rem; }
-
-.show {
-  display: block; }
-
-.parameter,
-.arrow {
-  text-align: center; }
-
-.arrow-down,
-.param,
-.arrow-up {
-  cursor: pointer; }
-
-.displaySettings {
-  display: grid;
-  transform: translate(0, 50px);
-  transition: all 500ms ease-in;
-  z-index: 3; }
-
-select {
-  cursor: pointer; }
-
-.temperature {
-  display: grid;
-  align-items: center; }
-  .temperature h1 {
-    margin: 0;
-    font-size: 4rem; }
-
-.icon {
-  display: grid;
-  align-items: center; }
-  .icon i {
-    font-size: 5rem; }
-  .icon h1 {
-    margin: 0; }
-  .icon h4 {
-    align-self: end; }
-
-.description-title {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .description-title h6 {
-    margin: 0; }
-
-.wind {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .wind h5 {
-    margin: 0; }
-  .wind .windValue {
+  main .setting {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    transform: translate(0, -140px);
+    background-color: #000;
     display: grid;
-    align-content: center; }
-    .wind .windValue h5 {
-      font-size: 0.8rem; }
-
-.minmaxtemp {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .minmaxtemp .thermometer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.2rem;
+    transition: all 500ms ease-in;
+    color: white; }
+    main .setting .language,
+    main .setting .unit {
+      text-align: center; }
+    main .setting .btn {
+      display: grid;
+      grid-gap: 0.3rem; }
+      main .setting .btn button {
+        display: block;
+        cursor: pointer; }
+  main input[type="text"] {
+    width: 60%;
+    padding: 0.5rem; }
+  main .show {
+    display: block; }
+  main .parameter,
+  main .arrow {
+    text-align: center; }
+  main .arrow-down,
+  main .param,
+  main .arrow-up {
+    cursor: pointer; }
+  main .displaySettings {
     display: grid;
-    align-content: center; }
-    .minmaxtemp .thermometer h5 {
+    transform: translate(0, 50px);
+    transition: all 500ms ease-in;
+    z-index: 3; }
+  main select {
+    cursor: pointer; }
+  main .temperature {
+    display: grid;
+    align-items: center; }
+    main .temperature h1 {
+      margin: 0;
+      font-size: 4rem; }
+  main .icon {
+    display: grid;
+    align-items: center; }
+    main .icon i {
+      font-size: 5rem; }
+    main .icon h1 {
       margin: 0; }
-    .minmaxtemp .thermometer i {
-      font-size: 2.3rem; }
-
-.tempvalues {
-  display: grid; }
-  .tempvalues h3 {
-    margin: 0.3rem; }
-
-.humidity {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); }
-  .humidity .humiditySymbol i {
-    font-size: 1rem; }
-
-.day-1 {
-  background-color: rgba(51, 51, 51, 0.2); }
-  .day-1 div {
+    main .icon h4 {
+      align-self: end; }
+  main .description-title {
     display: grid;
-    text-align: center; }
-    .day-1 div:nth-child(1) {
-      align-content: center; }
-    .day-1 div:nth-child(2) {
-      align-content: center; }
-    .day-1 div:nth-child(3) {
-      align-items: center; }
-      .day-1 div:nth-child(3) h6 {
-        margin: 0;
-        padding: 0.09rem; }
-    .day-1 div:nth-child(4) {
-      align-items: center; }
-      .day-1 div:nth-child(4) h4 {
-        margin: 0;
-        font-size: 1.4rem; }
-    .day-1 div h4,
-    .day-1 div h5 {
-      margin: 0;
-      padding: 0; }
-      .day-1 div h4 i,
-      .day-1 div h5 i {
-        font-size: 2rem; }
-
-.day-2 {
-  background-color: rgba(51, 51, 51, 0.2); }
-  .day-2 div {
+    grid-template-columns: repeat(2, 1fr); }
+    main .description-title h6 {
+      margin: 0; }
+  main .wind {
     display: grid;
-    text-align: center; }
-    .day-2 div:nth-child(1) {
+    grid-template-columns: repeat(2, 1fr); }
+    main .wind h5 {
+      margin: 0; }
+    main .wind .windValue {
+      display: grid;
       align-content: center; }
-    .day-2 div:nth-child(2) {
-      align-content: center; }
-    .day-2 div:nth-child(3) {
-      align-items: center; }
-      .day-2 div:nth-child(3) h6 {
-        margin: 0;
-        padding: 0.09rem; }
-    .day-2 div:nth-child(4) {
-      align-items: center; }
-      .day-2 div:nth-child(4) h4 {
-        margin: 0;
-        font-size: 1.4rem; }
-    .day-2 div h4,
-    .day-2 div h5 {
-      margin: 0;
-      padding: 0; }
-      .day-2 div h4 i,
-      .day-2 div h5 i {
-        font-size: 2rem; }
-
-.day-3 {
-  background-color: rgba(51, 51, 51, 0.2); }
-  .day-3 div {
+      main .wind .windValue h5 {
+        font-size: 0.8rem; }
+  main .minmaxtemp {
     display: grid;
-    text-align: center; }
-    .day-3 div:nth-child(1) {
+    grid-template-columns: repeat(2, 1fr); }
+    main .minmaxtemp .thermometer {
+      display: grid;
       align-content: center; }
-    .day-3 div:nth-child(2) {
-      align-content: center; }
-    .day-3 div:nth-child(3) {
-      align-items: center; }
-      .day-3 div:nth-child(3) h6 {
-        margin: 0;
-        padding: 0.09rem; }
-    .day-3 div:nth-child(4) {
-      align-items: center; }
-      .day-3 div:nth-child(4) h4 {
-        margin: 0;
-        font-size: 1.4rem; }
-    .day-3 div h4,
-    .day-3 div h5 {
-      margin: 0;
-      padding: 0; }
-      .day-3 div h4 i,
-      .day-3 div h5 i {
-        font-size: 2rem; }
-
-.day-4 {
-  background-color: rgba(51, 51, 51, 0.2); }
-  .day-4 div {
+      main .minmaxtemp .thermometer h5 {
+        margin: 0; }
+      main .minmaxtemp .thermometer i {
+        font-size: 2.3rem; }
+  main .tempvalues {
+    display: grid; }
+    main .tempvalues h3 {
+      margin: 0.3rem; }
+  main .humidity {
     display: grid;
-    text-align: center; }
-    .day-4 div:nth-child(1) {
-      align-content: center; }
-    .day-4 div:nth-child(2) {
-      align-content: center; }
-    .day-4 div:nth-child(3) {
-      align-items: center; }
-      .day-4 div:nth-child(3) h6 {
+    grid-template-columns: repeat(2, 1fr); }
+    main .humidity .humiditySymbol i {
+      font-size: 1rem; }
+  main .day-1 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-1 div {
+      display: grid;
+      text-align: center; }
+      main .day-1 div:nth-child(1) {
+        align-content: center; }
+      main .day-1 div:nth-child(2) {
+        align-content: center; }
+      main .day-1 div:nth-child(3) {
+        align-items: center; }
+        main .day-1 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-1 div:nth-child(4) {
+        align-items: center; }
+        main .day-1 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-1 div h4,
+      main .day-1 div h5 {
         margin: 0;
-        padding: 0.09rem; }
-    .day-4 div:nth-child(4) {
-      align-items: center; }
-      .day-4 div:nth-child(4) h4 {
+        padding: 0; }
+        main .day-1 div h4 i,
+        main .day-1 div h5 i {
+          font-size: 2rem; }
+  main .day-2 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-2 div {
+      display: grid;
+      text-align: center; }
+      main .day-2 div:nth-child(1) {
+        align-content: center; }
+      main .day-2 div:nth-child(2) {
+        align-content: center; }
+      main .day-2 div:nth-child(3) {
+        align-items: center; }
+        main .day-2 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-2 div:nth-child(4) {
+        align-items: center; }
+        main .day-2 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-2 div h4,
+      main .day-2 div h5 {
         margin: 0;
-        font-size: 1.4rem; }
-    .day-4 div h4,
-    .day-4 div h5 {
-      margin: 0;
-      padding: 0; }
-      .day-4 div h4 i,
-      .day-4 div h5 i {
-        font-size: 2rem; }
-
-.day-5 {
-  background-color: rgba(51, 51, 51, 0.2); }
-  .day-5 div {
-    display: grid;
-    text-align: center; }
-    .day-5 div:nth-child(1) {
-      align-content: center; }
-    .day-5 div:nth-child(2) {
-      align-content: center; }
-    .day-5 div:nth-child(3) {
-      align-items: center; }
-      .day-5 div:nth-child(3) h6 {
+        padding: 0; }
+        main .day-2 div h4 i,
+        main .day-2 div h5 i {
+          font-size: 2rem; }
+  main .day-3 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-3 div {
+      display: grid;
+      text-align: center; }
+      main .day-3 div:nth-child(1) {
+        align-content: center; }
+      main .day-3 div:nth-child(2) {
+        align-content: center; }
+      main .day-3 div:nth-child(3) {
+        align-items: center; }
+        main .day-3 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-3 div:nth-child(4) {
+        align-items: center; }
+        main .day-3 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-3 div h4,
+      main .day-3 div h5 {
         margin: 0;
-        padding: 0.09rem; }
-    .day-5 div:nth-child(4) {
-      align-items: center; }
-      .day-5 div:nth-child(4) h4 {
+        padding: 0; }
+        main .day-3 div h4 i,
+        main .day-3 div h5 i {
+          font-size: 2rem; }
+  main .day-4 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-4 div {
+      display: grid;
+      text-align: center; }
+      main .day-4 div:nth-child(1) {
+        align-content: center; }
+      main .day-4 div:nth-child(2) {
+        align-content: center; }
+      main .day-4 div:nth-child(3) {
+        align-items: center; }
+        main .day-4 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-4 div:nth-child(4) {
+        align-items: center; }
+        main .day-4 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-4 div h4,
+      main .day-4 div h5 {
         margin: 0;
-        font-size: 1.4rem; }
-    .day-5 div h4,
-    .day-5 div h5 {
-      margin: 0;
-      padding: 0; }
-      .day-5 div h4 i,
-      .day-5 div h5 i {
-        font-size: 2rem; }
+        padding: 0; }
+        main .day-4 div h4 i,
+        main .day-4 div h5 i {
+          font-size: 2rem; }
+  main .day-5 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-5 div {
+      display: grid;
+      text-align: center; }
+      main .day-5 div:nth-child(1) {
+        align-content: center; }
+      main .day-5 div:nth-child(2) {
+        align-content: center; }
+      main .day-5 div:nth-child(3) {
+        align-items: center; }
+        main .day-5 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-5 div:nth-child(4) {
+        align-items: center; }
+        main .day-5 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-5 div h4,
+      main .day-5 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-5 div h4 i,
+        main .day-5 div h5 i {
+          font-size: 2rem; }

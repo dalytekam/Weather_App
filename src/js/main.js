@@ -1,33 +1,50 @@
 //Get the DOM elements
 
+//Get the arrow-down sign
 let arrow = document.querySelector(".arrow");
+
 let searchDiv = document.querySelector(".city-search");
+
 // Get the city name
 const cityName = document.querySelector(".city-name");
-// get a reference to the select field
+
+// get a reference to the select fields
 const lang = document.querySelector("#language");
 const unit = document.querySelector("#unit");
+
 // Get the settings button
 const param = document.querySelector(".param");
+
 // Get the parameter Div
 const setting = document.querySelector(".setting");
+
 //Get the save and cancel button
 const btn = document.querySelectorAll("button");
+
 //Get the main element
 const mainTag = document.querySelector("main");
+
 //Get the input field
 const inputSearch = document.querySelector("#inputSearch");
+
 //Get the search form
 const searchForm = document.querySelector("form");
+
 //Get the current section
 const currentSection = document.querySelector(".current");
+
 //Get the city name div content ("h3")
 const cityAndCountry = document.querySelector("#cityNameAndCountryName");
 
-// const spin = document.querySelector(".spin");
+// Get the update sign
+const spin = document.querySelector(".spin");
+
+//Get the h6 that diaplay the time of updating
+const lastUpdate = document.querySelector("#update-time");
 
 //Arrays of week days
 const weekDays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+
 //Arrays of months
 const months = [
   "jan",
@@ -59,9 +76,9 @@ if (localStorage.getItem("config") == null) {
 }
 
 // animate the sync icon
-// spin.addEventListener("click", animateSync);
-// spin.addEventListener("click", callTheApi);
-// spin.addEventListener("click", displayTheForeccast);
+spin.addEventListener("click", animateSync);
+spin.addEventListener("click", callTheApi);
+spin.addEventListener("click", displayTheForeccast);
 
 arrow.addEventListener("click", toggleSearchBar);
 
@@ -111,6 +128,9 @@ function callTheApi(e) {
   let lan = JSON.parse(localStorage.getItem("config"))[0].lan;
   let key = "6f82f2d2ceb2aa8ec59653c8cd278915";
   let nameOfCity = inputSearch.value.trim();
+  if (!searchDiv.classList.contains("show")) {
+    inputSearch.value = cityAndCountry.firstChild.textContent;
+  }
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
 
   // check the unit to display the good letter("F" or "C")
@@ -148,19 +168,23 @@ function callTheApi(e) {
       let y = date.getFullYear();
       let dateOnScreen = date.toLocaleDateString();
       let sunRise = new Date(data.sys.sunrise * 1000).toLocaleTimeString(
-        navigator.language,
-        {
+        navigator.language, {
           hour: "2-digit",
           minute: "2-digit"
         }
       );
       let sunSet = new Date(data.sys.sunset * 1000).toLocaleTimeString(
-        navigator.language,
-        {
+        navigator.language, {
           hour: "2-digit",
           minute: "2-digit"
         }
       );
+      let updateTime = new Date().toLocaleTimeString(
+
+        navigator.language, {
+          hour: "2-digit",
+          minute: "2-digit"
+        });
 
       // Generate the city name and country content
       fetch("js/countriesCode.json")
@@ -186,6 +210,7 @@ function callTheApi(e) {
                 <h1>${tempNow}&deg;</h1>
                 <h1>${displayTempUnit}</h1>
                 <h3>${dateOnScreen}</h3>
+                <h6>Updated ${updateTime}</h6>
             </div>
             <div class="description">
                 <div class="description-title">
@@ -284,14 +309,13 @@ function displayTheForeccast() {
     });
 }
 
-// function animateSync() {
-//   spin.classList.add("fa-spin");
+function animateSync() {
+  spin.classList.add("fa-spin");
+  setTimeout(stopSyncAnimation, 500);
 
-// }
-// let a = document.getElementsByTagName("main");
-// a[0].addEventListener("load", stopSyncAnimation);
+}
 
-// function stopSyncAnimation() {
-//   spin.classList.remove("fa-spin");
-//   console.log("ok");
-// }
+function stopSyncAnimation() {
+  spin.classList.remove("fa-spin");
+
+}

@@ -35,6 +35,8 @@ main {
     background-color: #000;
     text-align: center;
     color: white;
+    align-content: center;
+    font-size: 1.2rem;
 
   }
 
@@ -66,13 +68,14 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     // padding: 0.5rem;
+
     grid-gap: 0.5rem;
     border-bottom: 1px solid black;
     border-width: 60%;
     border-top: 1px solid black;
 
     padding-top: 0.5rem;
-    background-color: #00ddee;
+
 
     .description {
       display: grid;
@@ -191,7 +194,8 @@ main {
 
   .arrow-down,
   .param,
-  .arrow-up {
+  .arrow-up,
+  .spin {
     cursor: pointer;
   }
 
@@ -210,9 +214,14 @@ main {
     display: grid;
     align-items: center;
 
+
     h1 {
       margin: 0;
       font-size: 4rem;
+    }
+
+    h6 {
+      margin-top: 0;
     }
   }
 
@@ -230,6 +239,7 @@ main {
 
     h4 {
       align-self: end;
+      margin-top: 0;
     }
   }
 

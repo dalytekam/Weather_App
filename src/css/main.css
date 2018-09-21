@@ -13,7 +13,9 @@ main {
     display: grid;
     background-color: #000;
     text-align: center;
-    color: white; }
+    color: white;
+    align-content: center;
+    font-size: 1.2rem; }
   main .top,
   main .five-days {
     display: grid;
@@ -34,8 +36,7 @@ main {
     border-bottom: 1px solid black;
     border-width: 60%;
     border-top: 1px solid black;
-    padding-top: 0.5rem;
-    background-color: #00ddee; }
+    padding-top: 0.5rem; }
     main .current .description {
       display: grid;
       align-content: center; }
@@ -125,7 +126,8 @@ main {
     text-align: center; }
   main .arrow-down,
   main .param,
-  main .arrow-up {
+  main .arrow-up,
+  main .spin {
     cursor: pointer; }
   main .displaySettings {
     display: grid;
@@ -140,6 +142,8 @@ main {
     main .temperature h1 {
       margin: 0;
       font-size: 4rem; }
+    main .temperature h6 {
+      margin-top: 0; }
   main .icon {
     display: grid;
     align-items: center; }
@@ -148,7 +152,8 @@ main {
     main .icon h1 {
       margin: 0; }
     main .icon h4 {
-      align-self: end; }
+      align-self: end;
+      margin-top: 0; }
   main .description-title {
     display: grid;
     grid-template-columns: repeat(2, 1fr); }

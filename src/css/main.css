@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Exo:300|Julius+Sans+One|Nobile|Philosopher|Poiret+One|Roboto:300");
+html {
+  font-family: 'Roboto', sans-serif; }
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -14,8 +18,7 @@ main {
     background-color: #000;
     text-align: center;
     color: white;
-    align-content: center;
-    font-size: 1.2rem; }
+    align-content: center; }
   main .top,
   main .five-days {
     display: grid;
@@ -131,7 +134,7 @@ main {
     cursor: pointer; }
   main .displaySettings {
     display: grid;
-    transform: translate(0, 50px);
+    transform: translate(0, 70px);
     transition: all 500ms ease-in;
     z-index: 3; }
   main select {

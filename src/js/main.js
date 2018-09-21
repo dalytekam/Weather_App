@@ -77,6 +77,8 @@ if (localStorage.getItem("config") == null) {
 
 // animate the sync icon
 spin.addEventListener("click", animateSync);
+
+// Update the data after click on sync sign
 spin.addEventListener("click", callTheApi);
 spin.addEventListener("click", displayTheForeccast);
 

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meteo App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="setting">
+            <div class="language">
+                <h4>Language</h4>
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            <div class="unit">
+                <h4>Unit</h4>
+                <select id="unit">
+                    <option value="imperial">Fahrenheit</option>
+                    <option value="metric">Celcius</option>
+
+                </select>
+            </div>
+            <div class="btn">
+                <button>Save</button>
+                <button>Cancel</button>
+            </div>
+        </div>
+        <header>
+
+            <h3><i class="fas fa-cloud"></i> Weather</h3>
+        </header>
+        <section class="top">
+            <div class="city">
+                <div class="city-details">
+                    <div class="city-name-search">
+                        <div class="city-name">
+                            <h3 id="cityNameAndCountryName"></h3>
+                        </div>
+                        <div class="city-search">
+                            <form>
+                                <input type="text" id="inputSearch" placeholder="Ex:london,uk">
+                                <input type="submit" value="search" id="searchBtn">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <h4><i class="fas fa-angle-down arrow-down"></i></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="parameter">
+                <h4><i class="fas fa-cog param"></i></h4>
+                <h4><i class="fas fa-sync spin"></i></h4>
+
+            </div>
+
+        </section>
+        <section class="current">
+            <div class="icon">
+                <h1><i class="wi wi-day-sunny"></i></h1>
+                <h4>ciel clair</h4>
+            </div>
+            <div class="temperature">
+                <h1>87&deg;</h1>
+                <h1>C</h1>
+                <h3>12 jan 2018</h3>
+                <h6 id="update-time">updated 12 04 AM</h6>
+            </div>
+            <div class="description">
+                <div class="description-title">
+                    <div class="sunRise">
+                        <i class="wi wi-horizon-alt"></i>
+                        <h6>14:53 </h6>
+                    </div>
+                    <div class="sunSet">
+                        <i class="wi wi-horizon"></i>
+                        <h6>23:02</h6>
+                    </div>
+                </div>
+                <div class="wind">
+                    <div class="windSymbol">
+                        <h3><i class="wi wi-strong-wind"></i></h3>
+                    </div>
+                    <div class="windValue">
+                        <h5>53 <span>mph</span></h5>
+                    </div>
+                </div>
+                <div class="minmaxtemp">
+                    <div class="thermometer">
+                        <h5><i class="wi wi-thermometer"></i></h5>
+                    </div>
+                    <div class="tempvalues">
+                        <div class="max">
+                            <h3>90&deg;</h3>
+                        </div>
+                        <div class="min">
+                            <h3>65&deg;</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="humidity">
+                    <div class="humiditySymbol">
+                        <h4><i class="fas fa-tint"></i></h4>
+                    </div>
+                    <div class="humidityValue">
+                        <h4>47%</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="five-days">
+            <div class="day-1">
+                <div class="forecast-date">
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>68&deg;</h4>
+
+
+                </div>
+            </div>
+            <div class="day-2">
+                <div class="forecast-date">
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>68&deg;</h4>
+
+
+                </div>
+            </div>
+            <div class="day-3">
+                <div class="forecast-date">
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>68&deg;</h4>
+                </div>
+            </div>
+            <div class="day-4">
+                <div class="forecast-date">
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>68&deg;</h4>
+
+
+                </div>
+            </div>
+            <div class="day-5">
+                <div class="forecast-date">
+                    <h4>LUN</h4>
+                    <h5>FEV 18</h5>
+                </div>
+                <div class="forecast-image">
+                    <h5><i class="wi wi-day-lightning"></i></h5>
+                </div>
+                <div class="forecast-description">
+                    <h6>Responsive de nuage et de pluie</h6>
+                </div>
+                <div class="forecast-min-max">
+                    <h4>68&deg;</h4>
+
+
+                </div>
+            </div>
+        </section>
+        <footer class="update-info">
+            <p>copyright&COPY; 2018</p>
+        </footer>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

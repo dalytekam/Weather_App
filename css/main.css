@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Exo:300|Julius+Sans+One|Nobile|Philosopher|Poiret+One|Roboto:300");
+html {
+  font-family: 'Roboto', sans-serif; }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 95%;
+  max-width: 800px;
+  grid-template-rows: 1fr 1.2fr 3fr 3fr 1fr;
+  margin: 1rem auto;
+  height: 100%;
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+  position: relative; }
+  main header {
+    display: grid;
+    background-color: #000;
+    text-align: center;
+    color: white;
+    align-content: center; }
+  main .top,
+  main .five-days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0.5rem; }
+  main footer {
+    display: grid;
+    background-color: #000;
+    color: #fff;
+    align-items: end; }
+    main footer p {
+      margin: 0 auto;
+      padding: 0.5rem; }
+  main .current {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+    border-bottom: 1px solid black;
+    border-width: 60%;
+    border-top: 1px solid black;
+    padding-top: 0.5rem; }
+    main .current .description {
+      display: grid;
+      align-content: center; }
+  main .icon,
+  main .temperature,
+  main .description {
+    text-align: center;
+    align-items: center; }
+  main .top .city {
+    grid-column: span 4;
+    grid-gap: 0.5rem; }
+    main .top .city .city-details {
+      display: grid;
+      grid-template-columns: 9fr 1fr;
+      grid-gap: 0.5rem;
+      transition: all 2000ms ease-in; }
+      main .top .city .city-details .city-name-search {
+        display: grid;
+        grid-gap: 0.5rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
+        main .top .city .city-details .city-name-search .city-name {
+          grid-column: 1/-1;
+          text-align: center; }
+          main .top .city .city-details .city-name-search .city-name h3:first-letter {
+            text-transform: uppercase; }
+  main .day-1 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-2 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-3 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-4 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .day-5 {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-rows: repeat(4, 1fr); }
+  main .city-search {
+    display: none;
+    grid-column: 1/-1; }
+    main .city-search #searchBtn {
+      display: inline-block;
+      margin-left: 0.5rem;
+      width: 25%;
+      padding: 0.5rem;
+      cursor: pointer; }
+  main .setting {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    width: calc(100% - 1rem);
+    transform: translate(0, -140px);
+    background-color: #000;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.2rem;
+    transition: all 500ms ease-in;
+    color: white; }
+    main .setting .language,
+    main .setting .unit {
+      text-align: center; }
+    main .setting .btn {
+      display: grid;
+      grid-gap: 0.3rem; }
+      main .setting .btn button {
+        display: block;
+        cursor: pointer; }
+  main input[type="text"] {
+    width: 60%;
+    padding: 0.5rem; }
+  main .show {
+    display: block; }
+  main .parameter,
+  main .arrow {
+    text-align: center; }
+  main .arrow-down,
+  main .param,
+  main .arrow-up,
+  main .spin {
+    cursor: pointer; }
+  main .displaySettings {
+    display: grid;
+    transform: translate(0, 70px);
+    transition: all 500ms ease-in;
+    z-index: 3; }
+  main select {
+    cursor: pointer; }
+  main .temperature {
+    display: grid;
+    align-items: center; }
+    main .temperature h1 {
+      margin: 0;
+      font-size: 4rem; }
+    main .temperature h6 {
+      margin-top: 0; }
+  main .icon {
+    display: grid;
+    align-items: center; }
+    main .icon i {
+      font-size: 5rem; }
+    main .icon h1 {
+      margin: 0; }
+    main .icon h4 {
+      align-self: end;
+      margin-top: 0; }
+  main .description-title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    main .description-title h6 {
+      margin: 0; }
+  main .wind {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    main .wind h5 {
+      margin: 0; }
+    main .wind .windValue {
+      display: grid;
+      align-content: center; }
+      main .wind .windValue h5 {
+        font-size: 0.8rem; }
+  main .minmaxtemp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    main .minmaxtemp .thermometer {
+      display: grid;
+      align-content: center; }
+      main .minmaxtemp .thermometer h5 {
+        margin: 0; }
+      main .minmaxtemp .thermometer i {
+        font-size: 2.3rem; }
+  main .tempvalues {
+    display: grid; }
+    main .tempvalues h3 {
+      margin: 0.3rem; }
+  main .humidity {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); }
+    main .humidity .humiditySymbol i {
+      font-size: 1rem; }
+  main .day-1 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-1 div {
+      display: grid;
+      text-align: center; }
+      main .day-1 div:nth-child(1) {
+        align-content: center; }
+      main .day-1 div:nth-child(2) {
+        align-content: center; }
+      main .day-1 div:nth-child(3) {
+        align-items: center; }
+        main .day-1 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-1 div:nth-child(4) {
+        align-items: center; }
+        main .day-1 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-1 div h4,
+      main .day-1 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-1 div h4 i,
+        main .day-1 div h5 i {
+          font-size: 2rem; }
+  main .day-2 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-2 div {
+      display: grid;
+      text-align: center; }
+      main .day-2 div:nth-child(1) {
+        align-content: center; }
+      main .day-2 div:nth-child(2) {
+        align-content: center; }
+      main .day-2 div:nth-child(3) {
+        align-items: center; }
+        main .day-2 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-2 div:nth-child(4) {
+        align-items: center; }
+        main .day-2 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-2 div h4,
+      main .day-2 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-2 div h4 i,
+        main .day-2 div h5 i {
+          font-size: 2rem; }
+  main .day-3 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-3 div {
+      display: grid;
+      text-align: center; }
+      main .day-3 div:nth-child(1) {
+        align-content: center; }
+      main .day-3 div:nth-child(2) {
+        align-content: center; }
+      main .day-3 div:nth-child(3) {
+        align-items: center; }
+        main .day-3 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-3 div:nth-child(4) {
+        align-items: center; }
+        main .day-3 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-3 div h4,
+      main .day-3 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-3 div h4 i,
+        main .day-3 div h5 i {
+          font-size: 2rem; }
+  main .day-4 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-4 div {
+      display: grid;
+      text-align: center; }
+      main .day-4 div:nth-child(1) {
+        align-content: center; }
+      main .day-4 div:nth-child(2) {
+        align-content: center; }
+      main .day-4 div:nth-child(3) {
+        align-items: center; }
+        main .day-4 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-4 div:nth-child(4) {
+        align-items: center; }
+        main .day-4 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-4 div h4,
+      main .day-4 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-4 div h4 i,
+        main .day-4 div h5 i {
+          font-size: 2rem; }
+  main .day-5 {
+    background-color: rgba(51, 51, 51, 0.2); }
+    main .day-5 div {
+      display: grid;
+      text-align: center; }
+      main .day-5 div:nth-child(1) {
+        align-content: center; }
+      main .day-5 div:nth-child(2) {
+        align-content: center; }
+      main .day-5 div:nth-child(3) {
+        align-items: center; }
+        main .day-5 div:nth-child(3) h6 {
+          margin: 0;
+          padding: 0.09rem; }
+      main .day-5 div:nth-child(4) {
+        align-items: center; }
+        main .day-5 div:nth-child(4) h4 {
+          margin: 0;
+          font-size: 1.4rem; }
+      main .day-5 div h4,
+      main .day-5 div h5 {
+        margin: 0;
+        padding: 0; }
+        main .day-5 div h4 i,
+        main .day-5 div h5 i {
+          font-size: 2rem; }

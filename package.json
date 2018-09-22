@@ -10,5 +10,9 @@
     "Meteo"
   ],
   "author": "Daly tekam",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
 }

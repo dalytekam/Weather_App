@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Meteo Web App",
   "main": "index.js",
+  "homepage": "https://dalytekam.github.io/Weather_App",
   "scripts": {
-    "sass": "node-sass -w scss/ -o src/css/ --recursive"
+    "sass": "node-sass -w scss/ -o src/css/ --recursive",
+    "deploy": "gh-pages -d src"
   },
   "keywords": [
     "Meteo"
@@ -13,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "gh-pages": "^2.0.0"
   }
 }

@@ -133,7 +133,7 @@ function callTheApi(e) {
   if (!searchDiv.classList.contains("show")) {
     inputSearch.value = cityAndCountry.firstChild.textContent;
   }
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
 
   // check the unit to display the good letter("F" or "C")
   if (unit == "imperial") {
@@ -275,7 +275,7 @@ function displayTheForeccast() {
   let lan = JSON.parse(localStorage.getItem("config"))[0].lan;
   let key = "6f82f2d2ceb2aa8ec59653c8cd278915";
   let nameOfCity = inputSearch.value.trim();
-  let url = `http://api.openweathermap.org/data/2.5/forecast?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
+  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${nameOfCity}&units=${unit}&lang=${lan}&APPID=${key}`;
   fetch(url)
     .then(res => res.json())
     .then(data => {

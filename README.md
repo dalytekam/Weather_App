@@ -14,3 +14,13 @@ the **local storage** to save the users' settings
 Technologies used: 
 
 **HTML5**, **CSS3**, **JavaScript/ES6**, **JSON**, **SCSS**.
+
+# Others Projects
+
+- [Inventory Manager](https://inventory-app-manager.herokuapp.com/)
+- [List Pagination](https://app.netlify.com/sites/list-pagination)
+- [Random Quotes Generator](https://app.netlify.com/sites/quote-gener)
+- [Registering App](https://app.netlify.com/sites/registering-app)
+- [Fast Typing App](https://app.netlify.com/sites/fast-typing-app)
+- [To do List Application](https://dalytekam.github.io/Todo-list-Application/)
+- [Country ID App](https://dalytekam.github.io/Countries_Datas)

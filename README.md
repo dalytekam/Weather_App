@@ -18,9 +18,9 @@ Technologies used:
 # Others Projects
 
 - [Inventory Manager](https://inventory-app-manager.herokuapp.com/)
-- [List Pagination](https://app.netlify.com/sites/list-pagination)
-- [Random Quotes Generator](https://app.netlify.com/sites/quote-gener)
-- [Registering App](https://app.netlify.com/sites/registering-app)
-- [Fast Typing App](https://app.netlify.com/sites/fast-typing-app)
+- [List Pagination](https://list-pagination.netlify.com/)
+- [Random Quotes Generator](https://quote-gener.netlify.com/)
+- [Registering App](https://registering-app.netlify.com/)
+- [Fast Typing App](https://fast-typing-app.netlify.com/)
 - [To do List Application](https://dalytekam.github.io/Todo-list-Application/)
 - [Country ID App](https://dalytekam.github.io/Countries_Datas)

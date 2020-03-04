@@ -15,7 +15,7 @@ Technologies used:
 
 **HTML5**, **CSS3**, **JavaScript/ES6**, **JSON**, **SCSS**.
 
-# Others Projects
+# My Others Projects
 
 - [Inventory Manager](https://inventory-app-manager.herokuapp.com/)
 - [List Pagination](https://list-pagination.netlify.com/)
